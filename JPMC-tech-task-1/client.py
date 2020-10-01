@@ -38,13 +38,13 @@ def getDataPoint(quote):
 	price =  (bid_price+ask_price) / 2
 	return stock, bid_price, ask_price, price
 
-def getRatio(price_a, price_b):
-	""" Get ratio of price_a and price_b """
+def getRatio(price_of_a, price_of_b):
+	""" Get ratio of price_of_a and price_of_b """
 	""" ------------- Update this function ------------- """
 	""" Also create some unit tests for this function in client_test.py """
 	if (price_b == 0):
 return
-return price_a/price_b
+return price_of_a/price_of_b
 
 # Main
 if __name__ == "__main__":
