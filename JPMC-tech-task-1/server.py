@@ -56,13 +56,13 @@ OVERLAP = 4
 
 ################################################################################
 #
-# Test Data
+# Test Data for price
 
 def bwalk(min, max, std):
     """ Generates a bounded random walk. """
     rng = max - min
     while True:
-        max += normalvariate(0, std)
+        max =max + normalvariate(0, std)
         yield abs((max % (rng * 2)) - rng) + min
 
 def market(t0 = MARKET_OPEN):
@@ -71,7 +71,7 @@ def market(t0 = MARKET_OPEN):
     """
     for hours, px, spd in izip(bwalk(*FREQ), bwalk(*PX), bwalk(*SPD)):
         yield t0, px, spd
-        t0 += timedelta(hours = abs(hours))
+        t0 =t0+ timedelta(hours = abs(hours))
 
 def orders(hist):
     """ Generates a random set of limit orders (time, side, price, size) from
